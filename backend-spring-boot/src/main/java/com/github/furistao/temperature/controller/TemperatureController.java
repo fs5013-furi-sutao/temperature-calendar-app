@@ -16,12 +16,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.Api;
+
 import com.github.furistao.temperature.exception.ResourceNotFoundException;
 import com.github.furistao.temperature.model.Temperature;
 import com.github.furistao.temperature.repository.TemperatureRepository;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
+@Api(tags = "体温記録情報")
 @RequestMapping("/api/v1/")
 public class TemperatureController {
 
@@ -61,7 +64,7 @@ public class TemperatureController {
 			@RequestBody Temperature temperatureDetails) {
 
 		Temperature temperature = temperatureRepository.findById(id).orElseThrow(
-				() -> new ResourceNotFoundException("Temperature not exist with id :" + id));
+				() -> new ResourceNotFoundException("Temperature for updating not exist with id :" + id));
 		System.out.println("temperatureDetails.title=" + temperatureDetails.getTemperature());
 		temperature.setTemperature(temperatureDetails.getTemperature());
 

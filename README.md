@@ -1,9 +1,9 @@
 # 体温記録管理アプリ
 体温記録アプリのサンプル
 
-バックエンド： Spring Boot REST API サーバ  
-データベース： MySQL 8.0  
-フロントエンド： React JS  
+バックエンド： Spring Boot
+データベース： MySQL 
+フロントエンド： React 
 
 ### 利用手順
 リポジトリのトップディレクトリで DB コンテナを起動する
@@ -18,7 +18,7 @@ https://github.com/fs5013-furi-sutao/explain.how_to_install.docker_toolbox
 
 エラーなく DB が起動できたら、バックエンドサーバに移動する。
 ```console
-cd ./springboot-backend
+cd ./backend-spring-boot
 ```
 
 #### バックエンドサーバを起動
@@ -33,7 +33,7 @@ Gradle をインストールしていない場合は、
 
 api につながることをブラウザで確認
 ```
-http://localhost:8080/api/v1/temperatures
+http://localhost:8080/swagger-ui/index.html
 ```
 
 DB の employees テーブルにデータを登録して、api から期待値が返ることを確認する。
@@ -50,14 +50,14 @@ DB の employees テーブルにデータを登録して、api から期待値�
 
 エラーなくサーバを起動できたら、フロントエンドサーバに移動する。
 ```console
-cd ./react-frontend
+cd ./frontend-react
 ```
 
 #### フロントエンドサーバ
 
 ##### Node モジュールをインストール
 ```console
-yarn install
+yarn
 ```
 
 ##### フロントサーバを起動
