@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.annotations.Api;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import com.github.furistao.temperature.exception.ResourceNotFoundException;
 import com.github.furistao.temperature.model.Temperature;
@@ -24,7 +24,7 @@ import com.github.furistao.temperature.repository.TemperatureRepository;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
-@Api(tags = "体温記録情報")
+@Tag(name = "体温記録情報", description = "体温記録の情報を収集・管理するAPI")
 @RequestMapping("/api/v1/")
 public class TemperatureController {
 
